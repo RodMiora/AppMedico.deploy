@@ -74,11 +74,16 @@ WSGI_APPLICATION = "pythonfull.wsgi.application"
 
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'medico_db',
+        'USER': 'admin',
+        'PASSWORD': 'j0x5S5W8JRz2IVIWBojU9ViciyHERPH1',
+        'HOST': 'dpg-cp74bgg21fec73dflagg-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
+
 
 
 
