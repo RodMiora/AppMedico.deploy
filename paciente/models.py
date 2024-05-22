@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from medico.models import DatasAbertas
 
-# Create your models here.
+
 class Consulta(models.Model):
     status_choice = (
         ('A', 'Agendado'),
