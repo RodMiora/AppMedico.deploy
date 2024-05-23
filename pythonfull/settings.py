@@ -3,11 +3,12 @@ import dj_database_url
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = "django-insecure-5iqgjs$a!e%g^x9uhr%906bzx__y-o_k%(pq=pi+8uhck2bhpz"
 
-DEBUG = True
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-ALLOWED_HOSTS = ['*']
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOST").split(" ")
 
 # Application definition
 
@@ -60,7 +61,9 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgres://admin:96em6ODioTozVeN1vNcdIM4XPig3fP7L@dpg-cp7d527sc6pc73a7qapg-a.oregon-postgres.render.com/medico_db_7guv")
+
+database_url = os.environ.get("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse(database_url)
 
 
 
