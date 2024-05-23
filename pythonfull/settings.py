@@ -1,7 +1,5 @@
-
 from pathlib import Path
 import os
-
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-5iqgjs$a!e%g^x9uhr%906bzx__y-o_k%(pq=pi+8uhck2bhpz"
@@ -9,7 +7,6 @@ SECRET_KEY = "django-insecure-5iqgjs$a!e%g^x9uhr%906bzx__y-o_k%(pq=pi+8uhck2bhpz
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -55,21 +52,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "pythonfull.wsgi.application"
 
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'medico_db',
-        'USER': 'admin',
-        'PASSWORD': 'j0x5S5W8JRz2IVIWBojU9ViciyHERPH1',
-        'HOST': 'dpg-cp74bgg21fec73dflagg-a.oregon-postgres.render.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -86,9 +74,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-
-
 LANGUAGE_CODE = "pt-BR"
 
 TIME_ZONE = "America/Sao_Paulo"
@@ -97,27 +82,24 @@ USE_I18N = True
 
 USE_TZ = False
 
-
-
+# Configurações de arquivos estáticos
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
-
-
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)  # Inclua o diretório de desenvolvimento
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Diretório para coletar arquivos estáticos para produção
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
 
 from django.contrib.messages import constants
 
 MESSAGE_TAGS = {
- constants.DEBUG: 'alert-primary',
- constants.ERROR: 'alert-danger',
- constants.SUCCESS: 'alert-success',
- constants.INFO: 'alert-info',
- constants.WARNING: 'alert-warning',
+    constants.DEBUG: 'alert-primary',
+    constants.ERROR: 'alert-danger',
+    constants.SUCCESS: 'alert-success',
+    constants.INFO: 'alert-info',
+    constants.WARNING: 'alert-warning',
 }
 
+LOGIN_URL='/usuarios/login/'

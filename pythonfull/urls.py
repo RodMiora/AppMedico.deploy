@@ -10,7 +10,7 @@ urlpatterns = [
     path("usuarios/", include('usuarios.urls')),
     path("medicos/", include('medico.urls')),
     path("pacientes/", include('paciente.urls')),
-    path('', lambda request: redirect('/pacientes/home'))
+    path('', lambda request: redirect('/pacientes/home')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
