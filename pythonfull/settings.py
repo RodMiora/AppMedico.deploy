@@ -1,4 +1,5 @@
 from pathlib import Path
+import dj_database_url 
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -59,6 +60,10 @@ DATABASES = {
     }
 }
 
+DATABASES["default"] = dj_database_url.parse("postgres://admin:96em6ODioTozVeN1vNcdIM4XPig3fP7L@dpg-cp7d527sc6pc73a7qapg-a.oregon-postgres.render.com/medico_db_7guv")
+
+
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -85,6 +90,8 @@ USE_TZ = False
 # Configurações de arquivos estáticos
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)  # Inclua o diretório de desenvolvimento
+
+
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Diretório para coletar arquivos estáticos para produção
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
