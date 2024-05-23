@@ -94,8 +94,14 @@ USE_I18N = True
 USE_TZ = False
 
 # Configurações de arquivos estáticos
+
+# URL base para os arquivos estáticos
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)  # Inclua o diretório de desenvolvimento
+
+# Diretórios adicionais onde os arquivos estáticos estão localizados
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'templates/static'),
+]
 
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Diretório para coletar arquivos estáticos para produção
