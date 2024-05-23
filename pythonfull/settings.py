@@ -1,6 +1,8 @@
 from pathlib import Path
-import dj_database_url 
+from venv import logger
 import os
+import logging
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -8,7 +10,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOST = os.environ.get('ALLOWED_HOST', 'localhost').split(',')
+
+logger = logging.getLogger(__name__)
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
+logger.info(f"ALLOWED_HOSTS: {ALLOWED_HOSTS}")
 
 # Application definition
 
