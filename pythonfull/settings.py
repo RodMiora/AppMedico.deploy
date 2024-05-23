@@ -54,12 +54,8 @@ WSGI_APPLICATION = "pythonfull.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycog2',
-        'NAME': 'medico_db_7guv',
-        'USER': 'admin',
-        'PASSWORD': '96em6ODioTozVeN1vNcdIM4XPig3fP7L',
-        'HOST': 'dpg-cp7d527sc6pc73a7qapg-a.oregon-postgres.render.com',
-        'PORT': '5432',    
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -89,8 +85,7 @@ USE_TZ = False
 # Configurações de arquivos estáticos
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)  # Inclua o diretório de desenvolvimento
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Diretório para coletar arquivos estáticos para produção
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Diretório para coletar arquivos estáticos para produção
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
