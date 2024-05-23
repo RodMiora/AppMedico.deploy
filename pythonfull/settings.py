@@ -66,8 +66,10 @@ DATABASES = {
 
 
 database_url = os.environ.get("DATABASE_URL")
-DATABASES["default"] = dj_database_url.parse(database_url)
 
+logging.info(f"Valor da variável database_url: {database_url}")
+
+DATABASES["default"] = dj_database_url.parse(database_url)
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -97,10 +99,10 @@ USE_TZ = False
 
 # URL base para os arquivos estáticos
 STATIC_URL = '/static/'
-
+'''mudei aqui'''
 # Diretórios adicionais onde os arquivos estáticos estão localizados
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'templates/static'),
+    os.path.join(BASE_DIR, 'pythonfull/static'),
 ]
 
 
