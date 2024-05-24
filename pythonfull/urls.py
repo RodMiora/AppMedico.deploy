@@ -11,10 +11,6 @@ urlpatterns = [
     path("medicos/", include('medico.urls')),
     path("pacientes/", include('paciente.urls')),
     path('', lambda request: redirect('/pacientes/home')),
-]
-
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
