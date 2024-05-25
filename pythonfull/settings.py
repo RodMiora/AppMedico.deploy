@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5r!1j*mmmec!6qn6==al38!7xy85nw+fu9par-9_ne&yn=5b*7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'https://sua-saude-deploy.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', "sua-saude-deploy.onrender.com"]
 
 
 # Application definition
