@@ -1,1 +1,0 @@
-gunicorn pythonfull.wsgi
