@@ -31,7 +31,7 @@ def cadastro(request):
             messages.add_message(request, constants.ERROR, "Já existe um usuário com esse username")
             return redirect('/usuarios/cadastro')
         
-        user = User.objects.create_user(
+        users = User.objects.create_user(
             username=username,
             email=email,
             password=senha
@@ -54,7 +54,7 @@ def login_view(request):
 
         if user:
             auth.login(request, user)
-            return redirect('/pacientes/home')  # vai dar erro
+            return redirect('/pacientes/home') 
         
         messages.add_message(request, constants.ERROR, 'Usuário ou senha inválidos!')
         return redirect('/usuarios/login')
